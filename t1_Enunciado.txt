@@ -1,0 +1,29 @@
+1. TESTE DE WEB SCRAPING
+
+Este teste deve ser realizado nas linguagens Python ou Java. E o código deverá executar o/a:
+
+1.1. Acesso ao site: https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos
+
+1.2. Download dos Anexos I e II em formato PDF:
+1.3. Compactação de todos os anexos em um único arquivo (formatos ZIP, RAR, etc.).
+
+
+
+
+# RESOLUÇÃO
+
+obs.: 
+para que funcione corretamente, precisamos do chromedriver de acordo com a versão do seu navegador e inserimos o arquivo executável extraído na pasta do nosso arquivo python a ser executado
+
+
+- para ACESSAR página web, instale o selenium:
+    pip install selenium
+
+    utilizaremos o webdriver do selenium para interagir com a página web
+
+
+- para BAIXAR arquivos da internet, instale o wget:
+    pip install wget
+
+
+- para compactar os arquivos PDF baixados, importe o zipfile do python

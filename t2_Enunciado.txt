@@ -1,0 +1,29 @@
+2. TESTE DE TRANSFORMAÇÃO DE DADOS
+
+Crie um código em Python ou Java que execute as seguintes tarefas:
+
+2.1. Extraia os dados da tabela Rol de Procedimentos e Eventos em Saúde do PDF do Anexo I do teste 1
+(todas as páginas)
+2.2. Salve os dados em uma tabela estruturada, em formato csv.
+2.3. Compacte o csv em um arquivo denominado "Teste_{seu_nome}.zip".
+2.4. Substitua as abreviações das colunas OD e AMB pelas descrições completas, conforme a legenda no
+rodapé.
+
+
+# RESOLUÇÃO
+
+- para EXTRAIR os dados da tabela instale o tabula:
+    pip install tabula.py
+
+
+obs1.:
+caso apareça o aviso "No module named 'jpype'", instale o jpype:
+    pip install jpype1
+
+
+- para MODIFICAR dados da tabela, importe o panda
+
+- para COMPACTAR o arquivo, importe o zipfile
+
+obs2.: para VISUALIZAR a tabela corretamente no excel (sem problemas de acentuação brasileira), siga os passos do seguinte link: 
+    https://cursos.alura.com.br/forum/topico-arquivo-csv-com-problemas-de-acentuacao-120583
