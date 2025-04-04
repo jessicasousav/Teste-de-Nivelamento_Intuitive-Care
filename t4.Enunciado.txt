@@ -1,0 +1,11 @@
+4. TESTE DE API
+
+Desenvolva uma interface web usando Vue.js que interaja com um servidor em Python para realizar as tarefas abaixo.
+
+Tarefas de Preparação:
+4.1. Utilize o CSV do item 3.2. deste teste.
+
+Tarefas de Código:
+4.2. Crie um servidor com uma rota que realize uma busca textual na lista de cadastros de operadoras
+(preparada anteriormente) e retorne os registros mais relevantes.
+4.3. Elabore uma coleção no Postman para demonstrar o resultado.

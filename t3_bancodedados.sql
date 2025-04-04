@@ -1,0 +1,255 @@
+/*1º PASSO: CRIAR BANCO DE DADOS*/
+create database db_intuitivecare;
+use db_intuitivecare;
+
+/*2º PASSO: Importar dados da tabela operadoras em "Table Data Import Wizard" (forma 1 de fazer) */
+/*3º PASSO: adicionar um id para cada operadora:*/
+ALTER TABLE operadoras ADD COLUMN id SERIAL PRIMARY KEY FIRST;
+
+/* para visualizar tabela criada: */
+SELECT * FROM operadoras;
+
+/*4º PASSO: CRIAÇÃO DE TABELAS dos dados DEMONSTRAÇÕES CONTABEIS: 
+    obs.: SALVE os arquivos csv em FORMATO 'csv utf8' para que importe corretamente
+*/
+
+/* resumo de visualização das tabelas (após criação de cada uma):*/
+SHOW TABLES;
+
+/*2023*/
+SELECT * FROM demonstracoes_1T2023;
+SELECT * FROM demonstracoes_2T2023;
+SELECT * FROM demonstracoes_3T2023;
+SELECT * FROM demonstracoes_4T2023;
+
+/*2024*/
+SELECT * FROM demonstracoes_1T2024;
+SELECT * FROM demonstracoes_2T2024;
+SELECT * FROM demonstracoes_3T2024;
+SELECT * FROM demonstracoes_4T2024;
+
+/* 1 trimestre 2023 */
+CREATE TABLE demonstracoes_1T2023(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* para importar do seu computador, coloque o diretório da pasta que estão seus arquivos:*/
+
+/* importar dados 1 TRIMESTRE 2023 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/1T2023.csv'
+INTO TABLE demonstracoes_1T2023
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_1T2023;
+
+
+/* 2 trimestre 2023 */
+CREATE TABLE demonstracoes_2T2023(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 2 TRIMESTRE 2023 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/2t2023.csv'
+INTO TABLE demonstracoes_2T2023
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_2T2023;
+
+
+/* 3 trimestre 2023 */
+CREATE TABLE demonstracoes_3T2023(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 3 TRIMESTRE 2023 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/3T2023.csv'
+INTO TABLE demonstracoes_3T2023
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_3T2023;
+
+
+/* 4 trimestre 2023 */
+CREATE TABLE demonstracoes_4T2023(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 4 TRIMESTRE 2023 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/4T2023.csv'
+INTO TABLE demonstracoes_4T2023
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_4T2023;
+
+
+
+/* 1 trimestre 2024 */
+CREATE TABLE demonstracoes_1T2024(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 1 TRIMESTRE 2024 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/1T2024.csv'
+INTO TABLE demonstracoes_1T2024
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_1T2024;
+
+
+/* 2 trimestre 2024 */
+CREATE TABLE demonstracoes_2T2024(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 2 TRIMESTRE 2024 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/2t2024.csv'
+INTO TABLE demonstracoes_2T2024
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_2T2024;
+
+
+/* 3 trimestre 2024 */
+CREATE TABLE demonstracoes_3T2024(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 3 TRIMESTRE 2024 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/3T2024.csv'
+INTO TABLE demonstracoes_3T2024
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_3T2024;
+
+
+/* 4 trimestre 2024 */
+CREATE TABLE demonstracoes_4T2024(
+	id SERIAL PRIMARY KEY,
+    DATA TEXT NOT NULL,
+    REG_ANS VARCHAR(15) NOT NULL,
+    CD_CONTA_CONTABIL INT(20),
+    DESCRICAO VARCHAR(100),
+    VL_SALDO_INICIAL NUMERIC(50),
+    VL_SALDO_FINAL NUMERIC(50)
+);
+
+/* importar dados 4 TRIMESTRE 2024 das tabelas csv (apenas os 1000 primeiros)*/
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/demonstracoes_contabeis/4T2024.csv'
+INTO TABLE demonstracoes_4T2024
+CHARACTER SET UTF8
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(DATA, REG_ANS, CD_CONTA_CONTABIL, DESCRICAO, VL_SALDO_INICIAL, VL_SALDO_FINAL);
+
+SELECT * FROM demonstracoes_4T2024;
+
+/* QUERIES ANALITICAS */
+
+/* 10 OPERADORAS DO ULTIMO TRIMESTRE COM MAIORES DESPESAS HOSPITALARES*/
+SELECT DISTINCT Razao_Social, Nome_Fantasia, Registro_ANS, DESCRICAO, VL_SALDO_FINAL - VL_SALDO_INICIAL AS DESPESAS_TOTAIS
+FROM demonstracoes_4t2024
+INNER JOIN operadoras
+ON demonstracoes_4t2024.REG_ANS=operadoras.Registro_ANS
+WHERE DESCRICAO LIKE ('EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR ')
+ORDER BY DESPESAS_TOTAIS DESC
+LIMIT 10;
+
+
+/* 10 OPERADORAS DO ULTIMO ANO COM MAIORES DESPESAS HOSPITALARES*/
+SELECT
+Registro_ANS, Razao_Social, 
+SUM(VL_SALDO_FINAL - VL_SALDO_INICIAL) AS DESPESAS_TOTAIS
+FROM (
+	SELECT REG_ANS, VL_SALDO_FINAL, VL_SALDO_INICIAL, DESCRICAO FROM demonstracoes_1t2024 
+    UNION ALL
+	SELECT REG_ANS, VL_SALDO_FINAL, VL_SALDO_INICIAL, DESCRICAO FROM demonstracoes_2t2024 
+    UNION ALL
+	SELECT REG_ANS, VL_SALDO_FINAL, VL_SALDO_INICIAL, DESCRICAO FROM demonstracoes_3t2024 
+    UNION ALL
+	SELECT REG_ANS, VL_SALDO_FINAL, VL_SALDO_INICIAL, DESCRICAO FROM demonstracoes_4t2024
+) AS dem
+INNER JOIN operadoras 
+ON dem.REG_ANS = operadoras.Registro_ANS
+WHERE DESCRICAO LIKE ('EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR ')
+GROUP BY operadoras.Razao_Social, operadoras.Registro_ANS, operadoras.Nome_Fantasia
+ORDER BY DESPESAS_TOTAIS DESC
+LIMIT 10;
