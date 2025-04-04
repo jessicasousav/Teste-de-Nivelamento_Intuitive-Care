@@ -10,7 +10,11 @@ Tarefas de Código:
 (preparada anteriormente) e retorne os registros mais relevantes.
 4.3. Elabore uma coleção no Postman para demonstrar o resultado.
 
+
 # RESOLUÇÃO
+
+>> PASTA "t4_TesteAPI_RESOLUCAO" <<
+
 
 - instalar o flask, para usar o flask, jsonify e request
     pip install flask

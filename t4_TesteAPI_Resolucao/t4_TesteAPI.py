@@ -6,11 +6,15 @@ app = Flask(__name__)
 CORS(app)
 
 # encontrando e lendo o arquivo csv
-caminho_csv = '../src/operadoras/Relatorio_cadop.csv'
+caminho_csv = './src/operadoras/Relatorio_cadop.csv'
 tabela = pd.read_csv(caminho_csv, sep=',', encoding='latin1')
 
 # criando uma coluna da razão social em maiúsculo
 tabela['Razao_Social'] = tabela['Razao_Social'].str.upper()
+
+@app.route("/")
+def home():
+    return "Olá, seja bem-vindo(a)! Para buscar informações adicione: '/buscar?q=NOME_DA_OPERADORA' ao final da URL acima"
 
 # definindo uma rota no método GET para encontrar dados no sistema
 @app.route("/buscar", methods=['GET'])
