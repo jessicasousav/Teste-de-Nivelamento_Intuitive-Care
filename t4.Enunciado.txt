@@ -9,3 +9,22 @@ Tarefas de Código:
 4.2. Crie um servidor com uma rota que realize uma busca textual na lista de cadastros de operadoras
 (preparada anteriormente) e retorne os registros mais relevantes.
 4.3. Elabore uma coleção no Postman para demonstrar o resultado.
+
+# RESOLUÇÃO
+
+- instalar o flask, para usar o flask, jsonify e request
+    pip install flask
+
+- utilizar o Pandas para ler os dados do arquivo csv
+
+- instalar o Vue Cli e eslint para utilização do Vue
+    npm install -g @vue/cli
+
+- Como o Vue será utilizado para o Front-end:
+    vue create frontend
+
+- instalar o axios
+    npm install axios
+
+
+obs.: Esta etapa foi feita apenas com o uso do Vue e Python (não houve aplicação do Postman)
