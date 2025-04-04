@@ -1,7 +1,7 @@
 # Teste de Nivelamento
 ## Intuitive Care
 
-Este teste foi realizado por [Jéssica de Sousa Vieira](linkedin.com/in/jessica-sousa-vieira) para o processo seletivo da Intuitive Care.
+Este teste foi realizado por [Jéssica de Sousa Vieira](https://www.linkedin.com/in/jessica-sousa-vieira) para o processo seletivo da Intuitive Care.
 
 ## Arquivos
 
